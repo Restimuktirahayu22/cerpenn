@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerkak & Komentar</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffe6ef;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 900px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #ffb6d9;
+            box-shadow: 0 0 15px rgba(255, 120, 170, 0.25);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #d63384;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .info {
+            text-align: center;
+            font-size: 14px;
+            color: #b84c7e;
+            margin-bottom: 20px;
+        }
+
+        .isi {
+            font-size: 16px;
+            text-align: justify;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 25px;
+        }
+
+        .gambar {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .gambar img {
+            width: 60%;
+            border-radius: 12px;
+            border: 3px solid #ffc2dd;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+        }
+
+        /* BUTTON */
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 25px auto;
+            padding: 12px;
+            background: #ff69b4;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e5579f;
+        }
+
+        /* FORM */
+        label {
+            font-size: 15px;
+            font-weight: bold;
+            color: #b84c7e;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 20px;
+            border-radius: 8px;
+            border: 1.5px solid #ffb6d9;
+            background: #fff0f7;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 120px;
+        }
+
+        /* HALAMAN (ditampilkan/ disembunyikan) */
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= HALAMAN CERITA ================= -->
+    <div id="halaman-cerita" class="page active">
+        <h1>BAHAYANE NARKOBA</h1>
+
+        <p class="info">
+            Dibuat oleh: <b>RESTI MUKTI RAHAYU</b><br>
+            Tanggal: <b>2 Desember 2025</b>
+        </p>
+
+        <div class="gambar">
+            <img src="narkoba.jpg" alt="Gambar Cerkak">
+        </div>
+
+        <div class="isi">
+            Ing sawijining desa pinggiran kutha, ana bocah sekolah 
+            menengah jenenge Ardi. Dheweke dikenal alus budi, pinter 
+            sinau, lan dadi pangarep-arep wong tuwane. Saben dina 
+            Ardi mesthi lunga sekolah nganggo sepeda ontel.
+
+            Nanging suwene-suwene Ardi miwiti ngganti kebiasaane. 
+            Dheweke kerep bali sore, nilai sekolah mudhun, lan 
+            pungkasane ketahuan nyoba narkoba amarga ajakan kancane.
+
+            Ardi banjur kecandhu lan dadi ringkih. Wong tuwane sedhih 
+            nanging tetep nuntun Ardi menyang panti rehabilitasi.
+
+            Sawise mari, Ardi bali sekolah lan dadi juru kampanye 
+            anti-narkoba kanggo kanca-kancane.
+        </div>
+
+        <a class="btn" onclick="bukaKomentar()">Beri Komentar</a>
+    </div>
+
+
+    <!-- ================= HALAMAN KOMENTAR ================= -->
+    <div id="halaman-komentar" class="page">
+        <h2>Komentar Pembaca</h2>
+
+        <form>
+            <label>Nama:</label>
+            <input type="text" placeholder="Masukkan nama Anda">
+
+            <label>Komentar:</label>
+            <textarea placeholder="Tulis komentar Anda di sini..."></textarea>
+
+            <button class="btn">Kirim</button>
+        </form>
+
+        <a class="btn" onclick="bukaCerita()">Kembali ke Cerita</a>
+    </div>
+
+</div>
+
+<script>
+    function bukaKomentar() {
+        document.getElementById("halaman-cerita").classList.remove("active");
+        document.getElementById("halaman-komentar").classList.add("active");
+    }
+
+    function bukaCerita() {
+        document.getElementById("halaman-komentar").classList.remove("active");
+        document.getElementById("halaman-cerita").classList.add("active");
+    }
+</script>
+
+</body>
+</html>
